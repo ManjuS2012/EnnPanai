@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About Us — Enn Panai Private Limited</title>
+
+  <link href=https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap rel="stylesheet">
+
+  <style>
+
+    :root {
+
+      --sage:        #B8CDB8;
+
+      --sage-deep:   #4A7C59;
+
+      --sage-pale:   #E6EFE6;
+
+      --sage-soft:   #D1E2D1;
+
+      --blush:       #F2C4CE;
+
+      --blush-deep:  #B8526A;
+
+      --blush-pale:  #FAF0F2;
+
+      --peach:       #F5C9A8;
+
+      --peach-deep:  #C0623A;
+
+      --peach-pale:  #FDF3EC;
+
+      --lilac-pale:  #F0EDF8;
+
+      --lilac-deep:  #6B58A0;
+
+      --butter-pale: #FDFAE8;
+
+      --butter-deep: #9E7A1A;
+
+      --cream:       #FBF7F0;
+
+      --warm-white:  #FEFCF8;
+
+      --text-dark:   #1A2B1A;
+
+      --text-mid:    #2E4A2E;
+
+      --text-soft:   #4A6040;
+
+      --text-muted:  #7A9070;
+
+      --border:      rgba(80,120,80,0.15);
+
+      --serif: 'Cormorant Garamond', Georgia, serif;
+
+      --sans:  'DM Sans', sans-serif;
+
+    }
+
+ 
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body { font-family: var(--sans); background: var(--warm-white); color: var(--text-dark); line-height: 1.7; }
+
+ 
+
+    /* ── NAV ── */
+
+    nav {
+
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+
+      background: rgba(251,247,240,0.96); backdrop-filter: blur(14px);
+
+      border-bottom: 1px solid var(--border);
+
+      padding: 0 3rem; display: flex; align-items: center; justify-content: space-between;
+
+      height: 62px;
+
+    }
+
+    .nav-brand { font-family: var(--serif); font-size: 1.1rem; letter-spacing: 0.1em; color: var(--sage-deep); font-weight: 600; text-decoration: none; }
+
+    .nav-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--blush-deep); display: inline-block; margin: 0 0.5rem; vertical-align: middle; }
+
+    .nav-links { display: flex; gap: 1.6rem; align-items: center; }
+
+    .nav-links a { font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; transition: color 0.2s; font-weight: 500; }
+
+    .nav-links a:hover, .nav-links a.active { color: var(--sage-deep); }
+
+    .nav-back { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage-deep); text-decoration: none; font-weight: 600; border: 1px solid var(--sage); padding: 0.35rem 0.9rem; border-radius: 100px; transition: background 0.2s; }
+
+    .nav-back:hover { background: var(--sage-pale); }
+
+ 
+
+    /* ── HERO ── */
+
+    .hero {
+
+      min-height: 85vh; padding: 0;
+
+      background: linear-gradient(135deg, #1A2B1A 0%, #2d6a4f 55%, #4A7C59 100%);
+
+      display: flex; align-items: center; justify-content: center;
+
+      position: relative; overflow: hidden; text-align: center;
+
+    }
+
+    .hero-orb { position: absolute; border-radius: 50%; background: radial-gradient(circle, rgba(184,205,184,0.12), transparent 70%); animation: drift 9s ease-in-out infinite alternate; }
+
+    .hero-orb.o1 { width: 700px; height: 700px; top: -200px; left: -150px; }
+
+    .hero-orb.o2 { width: 450px; height: 450px; bottom: -120px; right: -100px; animation-delay: -4s; }
+
+    @keyframes drift { from { transform: translate(0,0) scale(1); } to { transform: translate(25px,18px) scale(1.08); } }
+
+    .hero-content { position: relative; z-index: 2; padding: 2rem; }
+
+    .hero-eyebrow { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--sage); font-weight: 500; margin-bottom: 1.2rem; }
+
+    .hero-title { font-family: var(--serif); font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 300; color: white; line-height: 1.1; margin-bottom: 1.4rem; }
+
+    .hero-title em { color: #74c69d; font-style: italic; }
+
+    .hero-sub { font-size: clamp(0.9rem, 2vw, 1.1rem); color: rgba(255,255,255,0.65); max-width: 580px; margin: 0 auto 2rem; font-weight: 300; line-height: 1.85; }
+
+    .hero-pill { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 100px; padding: 0.4rem 1rem 0.4rem 0.6rem; margin-bottom: 1.5rem; }
+
+    .hero-pill-dot { width: 8px; height: 8px; border-radius: 50%; background: #74c69d; }
+
+    .hero-pill span { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.8); font-weight: 500; }
+
+ 
+
+    /* ── SECTIONS ── */
+
+    .section { padding: 100px 7vw 80px; position: relative; }
+
+    .sec-cream  { background: var(--cream); }
+
+    .sec-white  { background: white; }
+
+    .sec-sage   { background: var(--sage-pale); }
+
+    .sec-blush  { background: var(--blush-pale); }
+
+    .sec-peach  { background: var(--peach-pale); }
+
+    .sec-lilac  { background: var(--lilac-pale); }
+
+    .sec-butter { background: var(--butter-pale); }
+
+ 
+
+    .sec-bg-num { font-family: var(--serif); font-size: 5rem; font-weight: 300; color: rgba(74,124,89,0.07); position: absolute; top: 60px; right: 7vw; line-height: 1; pointer-events: none; user-select: none; }
+
+ 
+
+    .overline { font-size: 0.6rem; letter-spacing: 0.28em; text-transform: uppercase; font-weight: 600; color: var(--sage-deep); display: block; margin-bottom: 0.8rem; }
+
+    .overline-blush { color: var(--blush-deep); }
+
+    .overline-peach { color: var(--peach-deep); }
+
+    .overline-lilac { color: var(--lilac-deep); }
+
+    .overline-butter { color: var(--butter-deep); }
+
+ 
+
+    .rule { height: 1px; width: 48px; background: var(--sage); margin-bottom: 1.8rem; }
+
+    .rule-blush { background: var(--blush-deep); }
+
+    .rule-peach { background: var(--peach-deep); }
+
+    .rule-lilac { background: var(--lilac-deep); }
+
+    .rule-butter { background: var(--butter-deep); }
+
+ 
+
+    h2 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; line-height: 1.25; color: var(--text-dark); margin-bottom: 1.2rem; }
+
+    h2 em { font-style: italic; color: var(--sage-deep); }
+
+    .lead { font-size: 1rem; color: var(--text-mid); line-height: 1.85; max-width: 700px; margin-bottom: 2rem; }
+
+    .body-text { font-size: 0.92rem; color: var(--text-soft); line-height: 1.9; max-width: 720px; margin-bottom: 1.4rem; }
+
+ 
+
+    /* ── VISION STATEMENT ── */
+
+    .vision-statement {
+
+      background: linear-gradient(135deg, #1A2B1A, #2d6a4f);
+
+      border-radius: 24px; padding: 3.5rem 4rem; margin: 2rem 0;
+
+      position: relative; overflow: hidden;
+
+    }
+
+    .vision-statement::before { content: '"'; font-family: var(--serif); font-size: 14rem; position: absolute; top: -3rem; left: 1.5rem; color: rgba(255,255,255,0.04); line-height: 1; pointer-events: none; }
+
+    .vision-text { font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 2.2rem); font-style: italic; color: white; line-height: 1.5; position: relative; z-index: 1; }
+
+    .vision-text em { color: #74c69d; }
+
+ 
+
+    /* ── CARDS ── */
+
+    .card-grid { display: grid; gap: 1.5rem; margin-top: 2rem; }
+
+    .card-grid.two { grid-template-columns: 1fr 1fr; }
+
+    .card-grid.three { grid-template-columns: repeat(3, 1fr); }
+
+    .card-grid.four { grid-template-columns: repeat(4, 1fr); }
+
+ 
+
+    .card { background: white; border-radius: 18px; padding: 2rem; border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(74,124,89,0.06); transition: transform 0.2s, box-shadow 0.2s; }
+
+    .card:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(74,124,89,0.12); }
+
+    .card-icon { font-size: 2.2rem; display: block; margin-bottom: 1rem; }
+
+    .card-title { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--sage-deep); margin-bottom: 0.6rem; }
+
+    .card-body { font-size: 0.84rem; color: var(--text-soft); line-height: 1.8; }
+
+ 
+
+    /* ── VALUE CARD ── */
+
+    .value-card { border-radius: 18px; padding: 2rem; border: 1px solid var(--border); transition: transform 0.2s; }
+
+    .value-card:hover { transform: translateY(-3px); }
+
+    .value-num { font-family: var(--serif); font-size: 3rem; font-weight: 300; line-height: 1; margin-bottom: 0.8rem; display: block; }
+
+    .value-title { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.6rem; }
+
+    .value-body { font-size: 0.82rem; line-height: 1.75; }
+
+ 
+
+    /* ── PILLAR ── */
+
+    .pillar-list { display: flex; flex-direction: column; gap: 1.2rem; margin-top: 2rem; }
+
+    .pillar { display: flex; align-items: flex-start; gap: 1.6rem; background: white; border-radius: 16px; padding: 1.6rem 2rem; border: 1px solid var(--border); box-shadow: 0 2px 12px rgba(74,124,89,0.05); }
+
+    .pillar-num { font-family: var(--serif); font-size: 2.8rem; font-weight: 300; color: var(--sage); line-height: 1; flex-shrink: 0; width: 3rem; }
+
+    .pillar-body h4 { font-size: 1rem; font-weight: 700; color: var(--sage-deep); margin-bottom: 0.4rem; }
+
+    .pillar-body p { font-size: 0.84rem; color: var(--text-soft); line-height: 1.75; }
+
+ 
+
+    /* ── TARGET MARKET ── */
+
+    .market-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+
+    .market-card { border-radius: 18px; padding: 2rem; border: 1px solid var(--border); }
+
+    .market-tag { display: inline-block; font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; padding: 0.3rem 0.8rem; border-radius: 100px; margin-bottom: 1rem; }
+
+    .market-title { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.6rem; }
+
+    .market-body { font-size: 0.84rem; color: var(--text-soft); line-height: 1.8; }
+
+    .market-points { list-style: none; margin-top: 0.8rem; display: flex; flex-direction: column; gap: 0.4rem; }
+
+    .market-points li { font-size: 0.82rem; color: var(--text-soft); padding-left: 1.2rem; position: relative; }
+
+    .market-points li::before { content: '→'; position: absolute; left: 0; color: var(--sage-deep); font-size: 0.75rem; }
+
+ 
+
+    /* ── GOALS TIMELINE ── */
+
+    .goals-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+
+    .goal-card { border-radius: 18px; padding: 2rem; border: 1px solid var(--border); position: relative; overflow: hidden; }
+
+    .goal-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
+
+    .goal-y1::before { background: var(--sage-deep); }
+
+    .goal-y2::before { background: var(--blush-deep); }
+
+    .goal-y3::before { background: var(--peach-deep); }
+
+    .goal-year { font-family: var(--serif); font-size: 2.5rem; font-weight: 300; line-height: 1; margin-bottom: 0.5rem; display: block; }
+
+    .goal-y1 .goal-year { color: var(--sage-deep); }
+
+    .goal-y2 .goal-year { color: var(--blush-deep); }
+
+    .goal-y3 .goal-year { color: var(--peach-deep); }
+
+    .goal-label { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; color: var(--text-muted); margin-bottom: 1.2rem; display: block; }
+
+    .goal-items { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+
+    .goal-items li { font-size: 0.83rem; color: var(--text-soft); padding-left: 1.2rem; position: relative; line-height: 1.5; }
+
+    .goal-items li::before { content: '✓'; position: absolute; left: 0; font-size: 0.7rem; font-weight: 700; }
+
+    .goal-y1 .goal-items li::before { color: var(--sage-deep); }
+
+    .goal-y2 .goal-items li::before { color: var(--blush-deep); }
+
+    .goal-y3 .goal-items li::before { color: var(--peach-deep); }
+
+ 
+
+    /* ── PULL QUOTE ── */
+
+    .pull-quote { border-left: 4px solid var(--sage); padding: 1.2rem 2rem; margin: 2rem 0; background: var(--sage-pale); border-radius: 0 12px 12px 0; }
+
+    .pull-quote p { font-family: var(--serif); font-size: 1.15rem; font-style: italic; color: var(--sage-deep); line-height: 1.6; margin-bottom: 0.3rem; }
+
+    .pull-quote cite { font-size: 0.72rem; color: var(--text-muted); }
+
+ 
+
+    /* ── FOOTER ── */
+
+    footer { background: #1A2B1A; color: rgba(255,255,255,0.5); text-align: center; padding: 2.5rem; font-size: 0.75rem; letter-spacing: 0.08em; }
+
+    footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+
+    footer a:hover { color: #74c69d; }
+
+ 
+
+    /* ── RESPONSIVE ── */
+
+    @media (max-width: 900px) {
+
+      nav { padding: 0 1.2rem; }
+
+      .nav-links { display: none; }
+
+      .section { padding: 80px 5vw 60px; }
+
+      .card-grid.two, .card-grid.three, .card-grid.four, .market-grid, .goals-grid { grid-template-columns: 1fr; }
+
+      .vision-statement { padding: 2.5rem 2rem; }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+ 
+
+<!-- NAV -->
+
+<nav>
+
+  <a href="index.html" class="nav-brand">Enn Panai<span class="nav-dot"></span>Pvt. Ltd.</a>
+
+  <div class="nav-links">
+
+    <a href="#vision">Vision</a>
+
+    <a href="#mission">Mission</a>
+
+    <a href="#purpose">Purpose</a>
+
+    <a href="#values">Values</a>
+
+    <a href="#pillars">Strategy</a>
+
+    <a href="#market">Market</a>
+
+    <a href="#goals">Goals</a>
+
+  </div>
+
+  <a href="index.html" class="nav-back">← Back to Main</a>
+
+</nav>
+
+ 
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-orb o1"></div>
+
+  <div class="hero-orb o2"></div>
+
+  <div class="hero-content">
+
+    <div class="hero-pill"><div class="hero-pill-dot"></div><span>Enn Panai Private Limited</span></div>
+
+    <h1 class="hero-title">About <em>Us</em></h1>
+
+    <p class="hero-sub">Born in Viruppatchi, recognised in London — Enn Panai is where an ancient Indian tree becomes the world's most extraordinary sustainable textile fibre, and where rural women become global innovators.</p>
+
+  </div>
+
+</section>
+
+ 
+
+<!-- ══ VISION ══ -->
+
+<section class="section sec-cream" id="vision">
+
+  <div class="sec-bg-num">01</div>
+
+  <span class="overline">Our Vision</span>
+
+  <div class="rule"></div>
+
+  <h2>Where we are<br><em>going</em></h2>
+
+  <p class="lead">A future where fashion and nature are no longer in conflict — where every thread of clothing actively heals the planet rather than harms it.</p>
+
+ 
+
+  <div class="vision-statement">
+
+    <p class="vision-text">To be the world's leading source of <em>carbon-negative natural textile fibre</em> — transforming the Palmyra palm into a global symbol of regenerative luxury, and establishing Viruppatchi as a centre of sustainable textile excellence that the world looks to as a model.</p>
+
+  </div>
+
+ 
+
+  <div class="card-grid two" style="margin-top:2.5rem;">
+
+    <div class="card">
+
+      <span class="card-icon">🌍</span>
+
+      <div class="card-title">Global Leadership in Natural Fibre</div>
+
+      <div class="card-body">To establish Enn Panai as the definitive world-first carbon-negative textile brand — the reference point for every fashion house seeking genuinely regenerative natural fibre at commercial scale.</div>
+
+    </div>
+
+    <div class="card">
+
+      <span class="card-icon">🌴</span>
+
+      <div class="card-title">Palmyra as a Global Symbol</div>
+
+      <div class="card-body">To elevate the Palmyra palm from a culturally revered but commercially overlooked tree into a globally recognised sustainable resource — creating lasting economic and ecological value for Tamil Nadu and India.</div>
+
+    </div>
+
+  </div>
+
+</section>
+
+ 
+
+<!-- ══ MISSION ══ -->
+
+<section class="section sec-sage" id="mission">
+
+  <div class="sec-bg-num">02</div>
+
+  <span class="overline">Our Mission</span>
+
+  <div class="rule"></div>
+
+  <h2>What we do<br><em>every day</em></h2>
+
+  <p class="lead">To convert agro-waste palmyra fruit fibre into world-class apparel-grade textile through a zero-chemical, zero-competition, community-owned process — delivering a product that is simultaneously commercially superior and ecologically regenerative.</p>
+
+ 
+
+  <div class="card-grid three">
+
+    <div class="card">
+
+      <span class="card-icon">🧵</span>
+
+      <div class="card-title">Innovate</div>
+
+      <div class="card-body">Continually refine our proprietary extraction and blending process to improve fibre quality, yield, and scalability — keeping Enn Panai at the frontier of sustainable textile innovation.</div>
+
+    </div>
+
+    <div class="card">
+
+      <span class="card-icon">👩‍🌾</span>
+
+      <div class="card-title">Empower</div>
+
+      <div class="card-body">Create dignified, above-market wage employment for women in Viruppatchi and surrounding villages — building a fully community-owned value chain where the people who tend the trees transform them into luxury-grade fibre.</div>
+
+    </div>
+
+    <div class="card">
+
+      <span class="card-icon">🌱</span>
+
+      <div class="card-title">Regenerate</div>
+
+      <div class="card-body">Actively restore Palmyra groves through our sapling nursery programme — ensuring the ecosystem that sustains our supply chain grows stronger with every production cycle, not weaker.</div>
+
+    </div>
+
+  </div>
+
+ 
+
+  <div class="pull-quote">
+
+    <p>"We did not set out to build a company. We set out to prove that what grows in our village can clothe the world — and do it better than anything the industrial system has ever produced."</p>
+
+    <cite>— Pushpa, Co-Founder & Director</cite>
+
+  </div>
+
+</section>
+
+ 
+
+<!-- ══ PURPOSE ══ -->
+
+<section class="section sec-white" id="purpose">
+
+  <div class="sec-bg-num">03</div>
+
+  <span class="overline">Our Purpose</span>
+
+  <div class="rule"></div>
+
+  <h2>Why we<br><em>exist</em></h2>
+
+  <p class="lead">Enn Panai exists because the planet cannot afford fashion as it is. And because the women of Viruppatchi deserve to be the ones who change it.</p>
+
+ 
+
+  <div class="body-text">The global fashion industry is responsible for 10% of annual carbon emissions and is the second-largest consumer of the world's water supply. Yet 75% of fashion brands have committed to net-zero — a commitment they cannot currently keep, because a truly scalable, carbon-negative natural fibre alternative to cotton does not exist. Until Enn Panai.</div>
+
+ 
+
+  <div class="body-text">Simultaneously, India's Palmyra palms — once numbering 10 crore across Tamil Nadu — have declined to fewer than 2 crore today, as communities see no commercial reason to preserve them. The fruit fibre — agro-waste that is currently discarded — contains extraordinary textile potential that no one has ever harnessed at commercial scale.</div>
+
+ 
+
+  <div class="body-text">Enn Panai exists to solve both crises simultaneously: giving fashion a genuine net-carbon-negative fibre, and giving the Palmyra — and the communities that depend on it — a commercial reason to thrive for another century.</div>
+
+ 
+
+  <div class="card-grid two" style="margin-top:2rem;">
+
+    <div class="card" style="background:var(--sage-pale); border-color:var(--sage);">
+
+      <span class="card-icon">⚠️</span>
+
+      <div class="card-title" style="color:var(--sage-deep);">The Problem We Solve</div>
+
+      <div class="card-body">Fashion brands have net-zero pledges but no scalable, carbon-negative natural fibre alternative to cotton. Enn Panai is the world's first and only solution — a fibre that actively sequesters carbon while meeting luxury quality standards.</div>
+
+    </div>
+
+    <div class="card" style="background:var(--blush-pale); border-color:var(--blush);">
+
+      <span class="card-icon">💡</span>
+
+      <div class="card-title" style="color:var(--blush-deep);">The Opportunity We Seize</div>
+
+      <div class="card-body">India's 2 crore Palmyra palms produce millions of kilograms of agro-waste fruit fibre every season — currently discarded. Enn Panai has unlocked this sleeping giant, converting waste into world-class textile through a zero-input, community-owned process.</div>
+
+    </div>
+
+  </div>
+
+</section>
+
+ 
+
+<!-- ══ VALUES ══ -->
+
+<section class="section sec-blush" id="values">
+
+  <div class="sec-bg-num">04</div>
+
+  <span class="overline overline-blush">Our Values</span>
+
+  <div class="rule rule-blush"></div>
+
+  <h2>What we<br><em>stand for</em></h2>
+
+  <p class="lead">Six values that are not aspirations — they are operational realities embedded in every decision, every process, and every relationship at Enn Panai.</p>
+
+ 
+
+  <div class="card-grid three">
+
+    <div class="value-card" style="background:white;">
+
+      <span class="value-num" style="color:var(--sage-deep);">01</span>
+
+      <div class="value-title" style="color:var(--sage-deep);">Regeneration over Sustainability</div>
+
+      <div class="value-body" style="color:var(--text-soft);">We do not aim to be merely sustainable — reducing harm is not enough. Every action at Enn Panai is designed to actively improve the ecosystem, the community, and the climate. Net-negative is our baseline, not our aspiration.</div>
+
+    </div>
+
+    <div class="value-card" style="background:white;">
+
+      <span class="value-num" style="color:var(--blush-deep);">02</span>
+
+      <div class="value-title" style="color:var(--blush-deep);">Women at the Centre</div>
+
+      <div class="value-body" style="color:var(--text-soft);">Founded by women, operated by women, benefiting women. This is not a CSR initiative — it is the architecture of our enterprise. Economic independence for the women of Viruppatchi is as central to our purpose as the fibre itself.</div>
+
+    </div>
+
+    <div class="value-card" style="background:white;">
+
+      <span class="value-num" style="color:var(--peach-deep);">03</span>
+
+      <div class="value-title" style="color:var(--peach-deep);">Zero Compromise on Quality</div>
+
+      <div class="value-body" style="color:var(--text-soft);">Enn Panai fibre must meet luxury-grade global standards — not as a marketing claim, but as a technical reality. WGSN recognition and Future Fabrics Expo presence confirm that our sustainable credentials do not come at the cost of quality.</div>
+
+    </div>
+
+    <div class="value-card" style="background:white;">
+
+      <span class="value-num" style="color:var(--lilac-deep);">04</span>
+
+      <div class="value-title" style="color:var(--lilac-deep);">Radical Transparency</div>
+
+      <div class="value-body" style="color:var(--text-soft);">Every step of our process — from grove to garment — is traceable, documentable, and open to verification. We will pursue GOTS and OEKO-TEX certification because our process can withstand the most rigorous scrutiny.</div>
+
+    </div>
+
+    <div class="value-card" style="background:white;">
+
+      <span class="value-num" style="color:var(--butter-deep);">05</span>
+
+      <div class="value-title" style="color:var(--butter-deep);">Community as Capital</div>
+
+      <div class="value-body" style="color:var(--text-soft);">The knowledge, trust, and relationships we have built in Viruppatchi over generations are not soft assets — they are our most defensible competitive advantage. We will never treat community as a cost centre.</div>
+
+    </div>
+
+    <div class="value-card" style="background:white;">
+
+      <span class="value-num" style="color:var(--sage-deep);">06</span>
+
+      <div class="value-title" style="color:var(--sage-deep);">Heritage as Innovation</div>
+
+      <div class="value-body" style="color:var(--text-soft);">The Palmyra palm has sustained Tamil civilisation for 3,000 years. Our deepest innovation is not technological — it is the recognition that what ancient wisdom kept alive is precisely what the modern world most urgently needs.</div>
+
+    </div>
+
+  </div>
+
+</section>
+
+ 
+
+<!-- ══ STRATEGIC PILLARS ══ -->
+
+<section class="section sec-sage" id="pillars">
+
+  <div class="sec-bg-num">05</div>
+
+  <span class="overline">Strategic Pillars</span>
+
+  <div class="rule"></div>
+
+  <h2>How we build<br><em>what endures</em></h2>
+
+  <p class="lead">Five interlocking pillars that define how Enn Panai translates its vision into operational reality — each reinforcing the others to create a business that is simultaneously more sustainable and more defensible as it scales.</p>
+
+ 
+
+  <div class="pillar-list">
+
+    <div class="pillar">
+
+      <div class="pillar-num">01</div>
+
+      <div class="pillar-body">
+
+        <h4>Proprietary Process Innovation</h4>
+
+        <p>Our extraction technology — developed through years of hands-on experimentation in Viruppatchi — is our primary technical moat. The Indian patent application (202341069370) for a fabric from palmyra palm fruit fibre protects this innovation while we scale. Continued R&D investment will extend and deepen our technological lead over any potential competitor.</p>
+
+      </div>
+
+    </div>
+
+    <div class="pillar">
+
+      <div class="pillar-num">02</div>
+
+      <div class="pillar-body">
+
+        <h4>Community-Owned Supply Chain</h4>
+
+        <p>Our supply chain begins with the Palmyra groves of Tamil Nadu and ends with yarn — entirely within a 100km radius, entirely operated by trained women employees. This geographic concentration eliminates supply chain risk while creating an authentic provenance story that commands premium pricing in global markets.</p>
+
+      </div>
+
+    </div>
+
+    <div class="pillar">
+
+      <div class="pillar-num">03</div>
+
+      <div class="pillar-body">
+
+        <h4>Certification & Market Access</h4>
+
+        <p>GOTS and OEKO-TEX certification in Year 2 unlocks premium sustainable fashion channels in the EU, UK, and US. Fibral membership (Global Plant Fibre Association — Producer Member) provides international credibility. Our WGSN recognition and Future Fabrics Expo presence have already opened doors to luxury brand buyers that a conventional startup could not access.</p>
+
+      </div>
+
+    </div>
+
+    <div class="pillar">
+
+      <div class="pillar-num">04</div>
+
+      <div class="pillar-body">
+
+        <h4>Circular Economy Architecture</h4>
+
+        <p>Every element of the Palmyra fruit is used: the jelly flesh consumed or processed, the fibre extracted and spun, the seeds germinated into saplings that replenish the groves. This zero-waste architecture is not a marketing narrative — it is an operational system that reduces input costs and provides measurable, certifiable sustainability credentials.</p>
+
+      </div>
+
+    </div>
+
+    <div class="pillar">
+
+      <div class="pillar-num">05</div>
+
+      <div class="pillar-body">
+
+        <h4>Digital Reach & Community Building</h4>
+
+        <p>The Enn Panai Android application connects seed suppliers with consumers, building a digital ecosystem around the Palmyra economy. Combined with our blog (The Palmyra Chronicles), social media presence, and direct brand storytelling, we build the consumer awareness and brand equity that converts our sustainability credentials into purchasing decisions.</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+ 
+
+<!-- ══ TARGET MARKET ══ -->
+
+<section class="section sec-peach" id="market">
+
+  <div class="sec-bg-num">06</div>
+
+  <span class="overline overline-peach">Target Market & Value Proposition</span>
+
+  <div class="rule rule-peach"></div>
+
+  <h2>Who we serve<br><em>and how</em></h2>
+
+  <p class="lead">Enn Panai sits at the intersection of three converging global trends: the sustainability imperative in fashion, the premium on traceable natural fibres, and the growing consumer demand for products that carry genuine cultural and ecological provenance.</p>
+
+ 
+
+  <div class="market-grid">
+
+    <div class="market-card" style="background:white;">
+
+      <span class="market-tag" style="background:var(--peach-pale); color:var(--peach-deep);">Primary Market</span>
+
+      <div class="market-title">Global Sustainable Fashion Brands</div>
+
+      <div class="market-body">Luxury and mid-premium fashion brands with net-zero commitments seeking certified, carbon-negative natural fibre for collections, capsule ranges, and sustainability flagship products.</div>
+
+      <ul class="market-points">
+
+        <li>Brands in WGSN's 6,000+ global network</li>
+
+        <li>EU, UK & US sustainable fashion houses</li>
+
+        <li>Private label sustainable collections</li>
+
+        <li>B2B fibre and yarn supply contracts</li>
+
+      </ul>
+
+    </div>
+
+    <div class="market-card" style="background:white;">
+
+      <span class="market-tag" style="background:var(--sage-pale); color:var(--sage-deep);">Secondary Market</span>
+
+      <div class="market-title">Home Textiles & Furnishing Brands</div>
+
+      <div class="market-body">Premium home décor and furnishing brands seeking natural, biodegradable alternatives to synthetic fibres — commanding 30–40% price premiums over synthetic alternatives in European markets.</div>
+
+      <ul class="market-points">
+
+        <li>European natural home textile distributors</li>
+
+        <li>Premium furnishing fabric converters</li>
+
+        <li>Sustainable home goods retailers</li>
+
+        <li>Hospitality and wellness sector suppliers</li>
+
+      </ul>
+
+    </div>
+
+    <div class="market-card" style="background:white;">
+
+      <span class="market-tag" style="background:var(--blush-pale); color:var(--blush-deep);">Emerging Market</span>
+
+      <div class="market-title">Conscious Consumer Direct</div>
+
+      <div class="market-body">End consumers purchasing direct-to-consumer sustainable textile products — reached via the Enn Panai app, website, and curated retail partnerships in India's growing sustainable fashion ecosystem.</div>
+
+      <ul class="market-points">
+
+        <li>Urban Indian sustainable fashion consumers</li>
+
+        <li>NRI and diaspora market with Tamil Nadu connection</li>
+
+        <li>Conscious gifting and corporate sustainability programs</li>
+
+        <li>Direct e-commerce via www.ennpanai.com</li>
+
+      </ul>
+
+    </div>
+
+    <div class="market-card" style="background:linear-gradient(135deg,#1A2B1A,#2d6a4f); color:white;">
+
+      <span class="market-tag" style="background:rgba(255,255,255,0.15); color:rgba(255,255,255,0.9);">Our Value Proposition</span>
+
+      <div class="market-title" style="color:#74c69d;">The Only Carbon-Negative Apparel Fibre</div>
+
+      <div class="market-body" style="color:rgba(255,255,255,0.75);">No other commercially available apparel fibre is net carbon-negative, requires zero agricultural inputs, comes from agro-waste, and has achieved international recognition. Enn Panai is not a sustainable alternative — it is a category of one.</div>
+
+      <ul class="market-points" style="margin-top:1rem;">
+
+        <li style="color:rgba(255,255,255,0.7);">World-first — no comparable fibre globally</li>
+
+        <li style="color:rgba(255,255,255,0.7);">WGSN recognised innovation</li>
+
+        <li style="color:rgba(255,255,255,0.7);">Future Fabrics Expo London 2023 presenter</li>
+
+        <li style="color:rgba(255,255,255,0.7);">Fibral Global Plant Fibre Association member</li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</section>
+
+ 
+
+<!-- ══ GOALS ══ -->
+
+<section class="section sec-cream" id="goals">
+
+  <div class="sec-bg-num">07</div>
+
+  <span class="overline">Our Goals</span>
+
+  <div class="rule"></div>
+
+  <h2>Where we will be<br><em>in three years</em></h2>
+
+  <p class="lead">Specific, measurable, and already in motion. These are not projections built on assumptions — they are the disciplined scale-up of a model that has already delivered global-standard results on founder capital alone.</p>
+
+ 
+
+  <div class="goals-grid">
+
+    <div class="goal-card goal-y1" style="background:white;">
+
+      <span class="goal-year">Y1</span>
+
+      <span class="goal-label">Year One — Foundation</span>
+
+      <ul class="goal-items">
+
+        <li>Install semi-automated extraction machinery in Viruppatchi</li>
+
+        <li>Scale workforce from 5 pilot to 20 formal women employees</li>
+
+        <li>Achieve 1.5 metric tonnes of certified palmyra fibre</li>
+
+        <li>Launch Enn Panai app on Android Play Store</li>
+
+        <li>Initiate GOTS & OEKO-TEX certification process</li>
+
+        <li>Plant 3,000 palmyra saplings in grove programme</li>
+
+      </ul>
+
+    </div>
+
+    <div class="goal-card goal-y2" style="background:white;">
+
+      <span class="goal-year">Y2</span>
+
+      <span class="goal-label">Year Two — Market Entry</span>
+
+      <ul class="goal-items">
+
+        <li>Attain GOTS and OEKO-TEX certification</li>
+
+        <li>Enter EU, UK and US sustainable fashion channels</li>
+
+        <li>Grow workforce to 35 permanent women employees</li>
+
+        <li>Scale fibre production to 3 metric tonnes annually</li>
+
+        <li>Launch premium home textile product line</li>
+
+        <li>Establish first international brand supply partnership</li>
+
+      </ul>
+
+    </div>
+
+    <div class="goal-card goal-y3" style="background:white;">
+
+      <span class="goal-year">Y3</span>
+
+      <span class="goal-label">Year Three — Scale</span>
+
+      <ul class="goal-items">
+
+        <li>5 metric tonnes certified palmyra fibre annually</li>
+
+        <li>50+ formal permanent women employees</li>
+
+        <li>Annual turnover reaching ₹2.5 crore</li>
+
+        <li>10,000+ palmyra saplings cultivated and planted</li>
+
+        <li>Establish Viruppatchi as national model for sustainable textile</li>
+
+        <li>Begin replication of model in additional Tamil Nadu districts</li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+ 
+
+  <div class="pull-quote" style="margin-top:3rem;">
+
+    <p>"With just ₹5 lakhs of founder capital and the collective determination of Viruppatchi's women, Enn Panai has proven the entire process — from grove to yarn — and achieved international recognition. Investment transforms this extraordinary foundation into a national model."</p>
+
+    <cite>— Enn Panai Founders</cite>
+
+  </div>
+
+</section>
+
+ 
+
+<!-- FOOTER -->
+
+<footer>
+
+  <p>&copy; 2026 Enn Panai Private Limited. All rights reserved.</p>
+
+  <p style="margin-top:0.5rem;"><a href=https://www.ennpanai.com>www.ennpanai.com</a> &nbsp;·&nbsp; <a href="index.html">← Back to Main</a> &nbsp;·&nbsp; <a href="blog.html">Our Blog</a></p>
+
+</footer>
+
+ 
+
+</body>
+
+</html>

@@ -1,0 +1,2014 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Palmyra Chronicles — Enn Panai Blog</title>
+
+  <link href=https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap rel="stylesheet">
+
+  <style>
+
+    :root {
+
+      --sage:        #B8CDB8;
+
+      --sage-deep:   #4A7C59;
+
+      --sage-pale:   #E6EFE6;
+
+      --sage-soft:   #D1E2D1;
+
+      --blush:       #F2C4CE;
+
+      --blush-deep:  #B8526A;
+
+      --blush-pale:  #FAF0F2;
+
+      --peach:       #F5C9A8;
+
+      --peach-deep:  #C0623A;
+
+      --cream:       #FBF7F0;
+
+      --warm-white:  #FEFCF8;
+
+      --text-dark:   #1A2B1A;
+
+      --text-mid:    #2E4A2E;
+
+      --text-soft:   #4A6040;
+
+      --text-muted:  #7A9070;
+
+      --border:      rgba(80,120,80,0.15);
+
+      --serif: 'Cormorant Garamond', Georgia, serif;
+
+      --sans:  'DM Sans', sans-serif;
+
+    }
+
+ 
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+ 
+
+    html { scroll-behavior: smooth; }
+
+ 
+
+    body {
+
+      font-family: var(--sans);
+
+      background: var(--warm-white);
+
+      color: var(--text-dark);
+
+      line-height: 1.7;
+
+    }
+
+ 
+
+    /* ── NAV ── */
+
+    nav {
+
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+
+      background: rgba(251,247,240,0.96);
+
+      backdrop-filter: blur(14px);
+
+      border-bottom: 1px solid var(--border);
+
+      padding: 0 3rem;
+
+      display: flex; align-items: center; justify-content: space-between;
+
+      height: 62px;
+
+    }
+
+    .nav-brand {
+
+      font-family: var(--serif); font-size: 1.1rem;
+
+      letter-spacing: 0.1em; color: var(--sage-deep); font-weight: 600;
+
+      text-decoration: none;
+
+    }
+
+    .nav-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--blush-deep); display: inline-block; margin: 0 0.5rem; vertical-align: middle; }
+
+    .nav-links { display: flex; gap: 1.8rem; align-items: center; }
+
+    .nav-links a {
+
+      font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase;
+
+      color: var(--text-mid); text-decoration: none; transition: color 0.2s; font-weight: 500;
+
+    }
+
+    .nav-links a:hover, .nav-links a.active { color: var(--sage-deep); }
+
+    .nav-back {
+
+      display: inline-flex; align-items: center; gap: 0.4rem;
+
+      font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase;
+
+      color: var(--sage-deep); text-decoration: none; font-weight: 600;
+
+      border: 1px solid var(--sage); padding: 0.35rem 0.9rem; border-radius: 100px;
+
+      transition: background 0.2s;
+
+    }
+
+    .nav-back:hover { background: var(--sage-pale); }
+
+ 
+
+    /* ── HERO ── */
+
+    .hero {
+
+      min-height: 100vh; padding: 0;
+
+      background: #f5f5f0;
+
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+
+      position: relative; overflow: hidden; text-align: center;
+
+    }
+
+    .hero::before {
+
+      content: '';
+
+      position: absolute; inset: 0; z-index: 0;
+
+      background: url('data:image/jpeg;base64,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') center center / 55% auto no-repeat;
+
+      opacity: 0.55;
+
+      mix-blend-mode: multiply;
+
+      pointer-events: none;
+
+    }
+
+    .hero-orb {
+
+      position: absolute; border-radius: 50%;
+
+      background: radial-gradient(circle, rgba(74,124,89,0.08), transparent 70%);
+
+      animation: drift 8s ease-in-out infinite alternate;
+
+    }
+
+    .hero-orb.o1 { width: 600px; height: 600px; top: -150px; left: -100px; }
+
+    .hero-orb.o2 { width: 400px; height: 400px; bottom: -100px; right: -80px; animation-delay: -4s; }
+
+    .hero-orb.o3 { width: 300px; height: 300px; top: 50%; left: 60%; animation-delay: -2s; }
+
+    @keyframes drift { from { transform: translate(0,0) scale(1); } to { transform: translate(30px, 20px) scale(1.1); } }
+
+ 
+
+    .hero-content { position: relative; z-index: 2; padding: 2rem; }
+
+    .hero-eyebrow {
+
+      font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase;
+
+      color: #000000; font-weight: 700; margin-bottom: 1.2rem; letter-spacing: 0.35em;
+
+    }
+
+    .hero-title {
+
+      font-family: var(--serif); font-size: clamp(3rem, 8vw, 6rem);
+
+      font-weight: 600; color: #0d1f0d; line-height: 1.1; margin-bottom: 1.5rem; text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+
+    }
+
+    .hero-title em { color: #1a5c38; font-style: italic; }
+
+    .hero-sub {
+
+      font-size: clamp(0.9rem, 2vw, 1.1rem); color: #c0394b;
+
+      max-width: 560px; margin: 0 auto 2.5rem; font-weight: 700; line-height: 1.8;
+
+    }
+
+    .hero-scroll {
+
+      display: inline-flex; align-items: center; gap: 0.6rem;
+
+      color: #1a6bbf; font-size: 0.65rem; letter-spacing: 0.2em; font-weight: 700;
+
+      text-transform: uppercase; animation: bounce 2s ease-in-out infinite;
+
+    }
+
+    @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
+
+ 
+
+    /* ── TOPIC NAV ── */
+
+    .topic-nav {
+
+      position: sticky; top: 62px; z-index: 90;
+
+      background: white; border-bottom: 1px solid var(--border);
+
+      padding: 0 3rem; overflow-x: auto; white-space: nowrap;
+
+      display: flex; gap: 0;
+
+    }
+
+    .topic-nav::-webkit-scrollbar { height: 3px; }
+
+    .topic-nav::-webkit-scrollbar-thumb { background: var(--sage); border-radius: 100px; }
+
+    .topic-btn {
+
+      display: inline-flex; align-items: center; gap: 0.5rem;
+
+      padding: 1rem 1.2rem; font-size: 0.62rem; letter-spacing: 0.12em;
+
+      text-transform: uppercase; font-weight: 600; color: var(--text-muted);
+
+      text-decoration: none; border-bottom: 2px solid transparent;
+
+      transition: color 0.2s, border-color 0.2s; white-space: nowrap; font-family: var(--sans);
+
+    }
+
+    .topic-btn:hover, .topic-btn.active { color: var(--sage-deep); border-bottom-color: var(--sage-deep); }
+
+    .topic-num { font-family: var(--serif); font-size: 0.9rem; color: var(--sage); }
+
+ 
+
+    /* ── SECTIONS ── */
+
+    .blog-section {
+
+      padding: 100px 7vw 80px; position: relative;
+
+    }
+
+    .sec-cream  { background: var(--cream); }
+
+    .sec-white  { background: white; }
+
+    .sec-sage   { background: var(--sage-pale); }
+
+    .sec-blush  { background: var(--blush-pale); }
+
+    .sec-peach  { background: #FDF3EC; }
+
+ 
+
+    .section-num {
+
+      font-family: var(--serif); font-size: 5rem; font-weight: 300;
+
+      color: rgba(74,124,89,0.08); position: absolute; top: 60px; right: 7vw;
+
+      line-height: 1; pointer-events: none; user-select: none;
+
+    }
+
+    .overline {
+
+      font-size: 0.6rem; letter-spacing: 0.28em; text-transform: uppercase;
+
+      font-weight: 600; color: var(--sage-deep); margin-bottom: 0.8rem; display: block;
+
+    }
+
+    .rule { height: 1px; width: 48px; background: var(--sage); margin-bottom: 1.8rem; }
+
+    .rule-blush { background: var(--blush-deep); }
+
+    .rule-peach { background: var(--peach-deep); }
+
+ 
+
+    h2 {
+
+      font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem);
+
+      font-weight: 300; line-height: 1.25; color: var(--text-dark); margin-bottom: 1.2rem;
+
+    }
+
+    h2 em { color: var(--sage-deep); font-style: italic; }
+
+    .lead {
+
+      font-size: 1rem; color: var(--text-mid); line-height: 1.85;
+
+      max-width: 680px; margin-bottom: 2rem;
+
+    }
+
+    .body-text {
+
+      font-size: 0.92rem; color: var(--text-soft); line-height: 1.9;
+
+      max-width: 720px; margin-bottom: 1.4rem;
+
+    }
+
+ 
+
+    /* ── CONTENT GRID ── */
+
+    .content-grid {
+
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2.5rem;
+
+    }
+
+    .content-grid.three { grid-template-columns: repeat(3, 1fr); }
+
+    .content-card {
+
+      background: white; border-radius: 18px; padding: 2rem;
+
+      border: 1px solid var(--border);
+
+      box-shadow: 0 4px 24px rgba(74,124,89,0.06);
+
+      transition: transform 0.2s, box-shadow 0.2s;
+
+    }
+
+    .content-card:hover { transform: translateY(-3px); box-shadow: 0 10px 36px rgba(74,124,89,0.12); }
+
+    .card-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+
+    .card-title {
+
+      font-family: var(--serif); font-size: 1.3rem; font-weight: 600;
+
+      color: var(--sage-deep); margin-bottom: 0.7rem;
+
+    }
+
+    .card-body { font-size: 0.85rem; color: var(--text-soft); line-height: 1.8; }
+
+ 
+
+    /* ── FACT STRIP ── */
+
+    .fact-strip {
+
+      display: flex; gap: 1rem; flex-wrap: wrap; margin: 2rem 0;
+
+    }
+
+    .fact-pill {
+
+      background: var(--sage-soft); color: var(--sage-deep);
+
+      padding: 0.45rem 1rem; border-radius: 100px;
+
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em;
+
+    }
+
+ 
+
+    /* ── KURAL CARD ── */
+
+    .kural-card {
+
+      background: linear-gradient(135deg, #1A2B1A, #2d6a4f);
+
+      border-radius: 20px; padding: 3rem; margin: 2rem 0;
+
+      position: relative; overflow: hidden;
+
+    }
+
+    .kural-card::before {
+
+      content: '"'; font-family: var(--serif); font-size: 12rem;
+
+      position: absolute; top: -2rem; left: 1rem;
+
+      color: rgba(255,255,255,0.05); line-height: 1;
+
+    }
+
+    .kural-text {
+
+      font-family: var(--serif); font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+
+      font-style: italic; color: #d8f3dc; line-height: 1.6;
+
+      margin-bottom: 1rem; position: relative; z-index: 1;
+
+    }
+
+    .kural-sub {
+
+      font-size: 0.85rem; color: rgba(255,255,255,0.6);
+
+      position: relative; z-index: 1; font-style: italic;
+
+    }
+
+    .kural-source {
+
+      display: inline-block; margin-top: 1rem;
+
+      background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7);
+
+      padding: 0.3rem 0.8rem; border-radius: 100px;
+
+      font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase;
+
+      position: relative; z-index: 1;
+
+    }
+
+ 
+
+    /* ── USES GRID ── */
+
+    .uses-grid {
+
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; margin-top: 2rem;
+
+    }
+
+    .use-card {
+
+      background: white; border-radius: 16px; padding: 1.6rem 1.2rem;
+
+      text-align: center; border: 1px solid var(--border);
+
+      transition: transform 0.2s, box-shadow 0.2s;
+
+    }
+
+    .use-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(74,124,89,0.1); }
+
+    .use-icon { font-size: 2.5rem; margin-bottom: 0.8rem; display: block; }
+
+    .use-title { font-size: 0.75rem; font-weight: 700; color: var(--sage-deep); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.4rem; }
+
+    .use-desc { font-size: 0.78rem; color: var(--text-soft); line-height: 1.55; }
+
+ 
+
+    /* ── COUNTRY CARDS ── */
+
+    .country-grid {
+
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem;
+
+    }
+
+    .country-card {
+
+      border-radius: 16px; overflow: hidden;
+
+      border: 1px solid var(--border); background: white;
+
+      transition: transform 0.2s, box-shadow 0.2s;
+
+    }
+
+    .country-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+
+    .country-flag { font-size: 3rem; padding: 1.5rem; text-align: center; display: block; background: var(--sage-pale); }
+
+    .country-body { padding: 1.2rem; }
+
+    .country-name { font-weight: 700; font-size: 0.85rem; color: var(--sage-deep); margin-bottom: 0.4rem; }
+
+    .country-desc { font-size: 0.78rem; color: var(--text-soft); line-height: 1.6; }
+
+ 
+
+    /* ── CONTRIBUTE STEPS ── */
+
+    .steps { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+
+    .step {
+
+      display: flex; align-items: flex-start; gap: 1.4rem;
+
+      background: white; border-radius: 16px; padding: 1.5rem 1.8rem;
+
+      border: 1px solid var(--border);
+
+    }
+
+    .step-num {
+
+      font-family: var(--serif); font-size: 2.2rem; font-weight: 300;
+
+      color: var(--sage); line-height: 1; flex-shrink: 0; width: 2.5rem;
+
+    }
+
+    .step-body h4 { font-size: 0.9rem; font-weight: 700; color: var(--sage-deep); margin-bottom: 0.3rem; }
+
+    .step-body p { font-size: 0.82rem; color: var(--text-soft); line-height: 1.65; }
+
+ 
+
+    /* ── VIDEO SECTION ── */
+
+    .video-grid {
+
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+
+      gap: 1.5rem; margin-top: 2rem;
+
+    }
+
+    .video-wrap {
+
+      border-radius: 16px; overflow: hidden;
+
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+
+      background: #000; position: relative;
+
+      transition: transform 0.2s, box-shadow 0.2s;
+
+    }
+
+    .video-wrap:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,0.2); }
+
+    .video-thumb-link {
+
+      display: block; position: relative; aspect-ratio: 16/9; overflow: hidden;
+
+    }
+
+    .video-thumb-link img {
+
+      width: 100%; height: 100%; object-fit: cover; display: block;
+
+      transition: transform 0.3s;
+
+    }
+
+    .video-wrap:hover .video-thumb-link img { transform: scale(1.04); }
+
+    .video-play-btn {
+
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+
+      background: rgba(0,0,0,0.25); transition: background 0.2s;
+
+    }
+
+    .video-wrap:hover .video-play-btn { background: rgba(0,0,0,0.15); }
+
+    .video-play-btn svg { width: 64px; height: 64px; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4)); }
+
+    .video-label {
+
+      background: white; padding: 0.9rem 1.1rem;
+
+      font-size: 0.78rem; color: var(--text-mid); font-weight: 500;
+
+      line-height: 1.4;
+
+    }
+
+ 
+
+    /* ── GALLERY ── */
+
+    .gallery-placeholder {
+
+      background: var(--sage-pale); border-radius: 20px;
+
+      border: 2px dashed var(--sage); padding: 4rem;
+
+      text-align: center; margin-top: 2rem;
+
+    }
+
+    .gallery-placeholder-icon { font-size: 3rem; margin-bottom: 1rem; display: block; }
+
+    .gallery-placeholder h3 {
+
+      font-family: var(--serif); font-size: 1.5rem; color: var(--sage-deep); margin-bottom: 0.5rem;
+
+    }
+
+    .gallery-placeholder p { font-size: 0.85rem; color: var(--text-muted); }
+
+ 
+
+    /* ── STAT ROW ── */
+
+    .stat-row {
+
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 2rem 0;
+
+    }
+
+    .stat-box {
+
+      background: white; border-radius: 14px; padding: 1.5rem;
+
+      border: 1px solid var(--border); text-align: center;
+
+    }
+
+    .stat-num {
+
+      font-family: var(--serif); font-size: 2.4rem; font-weight: 300;
+
+      color: var(--sage-deep); display: block; line-height: 1;
+
+    }
+
+    .stat-label { font-size: 0.68rem; color: var(--text-muted); margin-top: 0.4rem; line-height: 1.4; }
+
+ 
+
+    /* ── QUOTE PULL ── */
+
+    .pull-quote {
+
+      border-left: 4px solid var(--sage); padding: 1.2rem 2rem;
+
+      margin: 2rem 0; background: var(--sage-pale); border-radius: 0 12px 12px 0;
+
+    }
+
+    .pull-quote p {
+
+      font-family: var(--serif); font-size: 1.15rem; font-style: italic;
+
+      color: var(--sage-deep); line-height: 1.6; margin-bottom: 0.4rem;
+
+    }
+
+    .pull-quote cite { font-size: 0.72rem; color: var(--text-muted); }
+
+ 
+
+    /* ── TWO COL LAYOUT ── */
+
+    .two-col {
+
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+
+      align-items: start; margin-top: 2rem;
+
+    }
+
+    .two-col.reverse .col-img { order: -1; }
+
+ 
+
+    /* ── IMAGE PLACEHOLDER ── */
+
+    .img-placeholder {
+
+      border-radius: 18px; overflow: hidden;
+
+      background: linear-gradient(135deg, var(--sage-pale), var(--cream));
+
+      border: 1px solid var(--border); position: relative;
+
+      display: flex; align-items: center; justify-content: center;
+
+      min-height: 280px;
+
+    }
+
+    .img-placeholder-inner { text-align: center; }
+
+    .img-placeholder-icon { font-size: 3rem; display: block; margin-bottom: 0.8rem; }
+
+    .img-placeholder-label { font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; }
+
+ 
+
+    /* ── TIMELINE ── */
+
+    .timeline { margin: 2rem 0; }
+
+    .timeline-item {
+
+      display: flex; gap: 1.5rem; padding-bottom: 2rem;
+
+      position: relative;
+
+    }
+
+    .timeline-item::before {
+
+      content: ''; position: absolute; left: 18px; top: 36px;
+
+      width: 2px; height: calc(100% - 20px); background: var(--sage);
+
+    }
+
+    .timeline-item:last-child::before { display: none; }
+
+    .timeline-dot {
+
+      width: 38px; height: 38px; border-radius: 50%;
+
+      background: var(--sage-deep); color: white;
+
+      display: flex; align-items: center; justify-content: center;
+
+      font-size: 0.75rem; font-weight: 700; flex-shrink: 0;
+
+    }
+
+    .timeline-body h4 { font-weight: 700; color: var(--sage-deep); margin-bottom: 0.3rem; font-size: 0.9rem; }
+
+    .timeline-body p { font-size: 0.82rem; color: var(--text-soft); line-height: 1.65; }
+
+ 
+
+    /* ── FOOTER ── */
+
+    footer {
+
+      background: #1A2B1A; color: rgba(255,255,255,0.5);
+
+      text-align: center; padding: 2.5rem;
+
+      font-size: 0.75rem; letter-spacing: 0.08em;
+
+    }
+
+    footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+
+    footer a:hover { color: #74c69d; }
+
+ 
+
+    /* ── RESPONSIVE ── */
+
+    @media (max-width: 900px) {
+
+      nav { padding: 0 1.2rem; }
+
+      .nav-links { display: none; }
+
+      .blog-section { padding: 80px 5vw 60px; }
+
+      .content-grid, .content-grid.three, .country-grid, .two-col, .stat-row { grid-template-columns: 1fr; }
+
+      .uses-grid { grid-template-columns: 1fr 1fr; }
+
+      .topic-nav { padding: 0 1rem; }
+
+    }
+
+    @media (max-width: 580px) {
+
+      .uses-grid { grid-template-columns: 1fr; }
+
+      .video-grid { grid-template-columns: 1fr; }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+ 
+
+<!-- NAV -->
+
+<nav>
+
+  <a href="index.html" class="nav-brand">Enn Panai<span class="nav-dot"></span>Pvt. Ltd.</a>
+
+  <div class="nav-links">
+
+    <a href="#tree">The Tree</a>
+
+    <a href="#fruit">The Fruit</a>
+
+    <a href="#epics">Tamil Epics</a>
+
+    <a href="#uses">Uses</a>
+
+    <a href="#benefits">Benefits</a>
+
+    <a href="#world">World View</a>
+
+    <a href="#government">Conservation</a>
+
+    <a href="#contribute">Contribute</a>
+
+    <a href="#videos">Videos</a>
+
+    <a href="#gallery">Gallery</a>
+
+  </div>
+
+  <a href="index.html" class="nav-back">← Back to Main</a>
+
+</nav>
+
+ 
+
+<!-- HERO -->
+
+<section class="hero" id="top">
+
+  <div class="hero-orb o1"></div>
+
+  <div class="hero-orb o2"></div>
+
+  <div class="hero-orb o3"></div>
+
+  <div class="hero-content">
+
+    <p class="hero-eyebrow">The Enn Panai Blog</p>
+
+    <h1 class="hero-title">The Palmyra<br><em>Chronicles</em></h1>
+
+    <p class="hero-sub">Exploring the ancient wisdom, cultural heritage, and boundless potential of India's most extraordinary palm — <em>Borassus flabellifer</em>, the tree of life.</p>
+
+    <div class="hero-scroll">Scroll to explore &nbsp; ↓</div>
+
+  </div>
+
+</section>
+
+ 
+
+ 
+
+<!-- ══ 01 THE TREE ══ -->
+
+<section class="blog-section sec-cream" id="tree">
+
+  <div class="section-num">01</div>
+
+  <span class="overline">Chapter One</span>
+
+  <div class="rule"></div>
+
+  <h2>What is the<br><em>Palmyra Palm Tree?</em></h2>
+
+  <p class="lead">Rising majestically across the plains of South India, the Palmyra palm — <em>Borassus flabellifer</em> — is one of humanity's oldest companions. It has witnessed civilisations rise and fall, yet stands unbowed, unyielding, and endlessly generous.</p>
+
+ 
+
+  <div class="fact-strip">
+
+    <span class="fact-pill">🌍 Found in 12+ countries</span>
+
+    <span class="fact-pill">📏 Up to 30 metres tall</span>
+
+    <span class="fact-pill">🕰️ Lifespan: 100+ years</span>
+
+    <span class="fact-pill">🌱 Zero agricultural inputs</span>
+
+    <span class="fact-pill">🌳 Tamil Nadu's State Tree</span>
+
+  </div>
+
+ 
+
+  <div class="two-col">
+
+    <div>
+
+      <p class="body-text">The Palmyra palm (<em>Borassus flabellifer</em>), known as <strong>Panai Maram</strong> in Tamil, is a tall, robust, fan-leaved palm native to the Indian subcontinent and Southeast Asia. It belongs to the family Arecaceae and is one of the most ancient and versatile plants known to mankind.</p>
+
+      <p class="body-text">The tree typically grows 20–30 metres tall with a straight grey trunk marked by leaf-scar rings. Its large, fan-shaped leaves — known as <em>talipot</em> — spread 3 metres wide at the crown. The Palmyra is remarkably drought-tolerant, capable of surviving in regions that receive as little as 400mm of annual rainfall, asking nothing from the land it inhabits.</p>
+
+      <p class="body-text">The tree bears fruit only after 15–20 years but once it begins, it produces abundantly for the remainder of its century-long life. It is dioecious — separate male and female trees — and requires no irrigation, no pesticides, and no fertiliser. It is, quite literally, nature's most perfect gift to a warming world.</p>
+
+ 
+
+      <div class="pull-quote">
+
+        <p>"The Palmyra is not just a tree — it is a complete civilisation encoded in wood, fibre, and fruit."</p>
+
+        <cite>— Ancient Tamil saying</cite>
+
+      </div>
+
+    </div>
+
+    <div class="img-placeholder">
+
+      <div class="img-placeholder-inner">
+
+        <span class="img-placeholder-icon">🌴</span>
+
+        <span class="img-placeholder-label">Palmyra Palm — Borassus flabellifer</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+ 
+
+  <div class="stat-row" style="margin-top:3rem;">
+
+    <div class="stat-box">
+
+      <span class="stat-num">800+</span>
+
+      <div class="stat-label">Traditional uses documented across cultures</div>
+
+    </div>
+
+    <div class="stat-box">
+
+      <span class="stat-num">30m</span>
+
+      <div class="stat-label">Maximum height — taller than a 10-storey building</div>
+
+    </div>
+
+    <div class="stat-box">
+
+      <span class="stat-num">100yr</span>
+
+      <div class="stat-label">Productive lifespan — sequestering carbon every decade</div>
+
+    </div>
+
+    <div class="stat-box">
+
+      <span class="stat-num">0</span>
+
+      <div class="stat-label">Chemical inputs required to grow</div>
+
+    </div>
+
+  </div>
+
+</section>
+
+ 
+
+<!-- ══ 02 THE FRUIT ══ -->
+
+<section class="blog-section sec-white" id="fruit">
+
+  <div class="section-num">02</div>
+
+  <span class="overline">Chapter Two</span>
+
+  <div class="rule"></div>
+
+  <h2>What is the<br><em>Palmyra Palm Fruit?</em></h2>
+
+  <p class="lead">Beneath the palm's fibrous crown grows one of nature's most remarkable fruits — known variously as the ice apple, nungu, or tadgola. Cooling, nourishing, and otherworldly in texture.</p>
+
+ 
+
+  <div class="two-col">
+
+    <div class="img-placeholder">
+
+      <div class="img-placeholder-inner">
+
+        <span class="img-placeholder-icon">🫐</span>
+
+        <span class="img-placeholder-label">Palmyra Fruit — Nungu / Ice Apple</span>
+
+      </div>
+
+    </div>
+
+    <div>
+
+      <p class="body-text">The Palmyra fruit (<em>Borassus flabellifer</em>) grows in dense clusters near the crown of the female tree. Each fruit is roughly the size of a coconut — dark brownish-black outside, containing 1–3 translucent, jelly-like seeds known as <strong>nungu</strong> (Tamil) or <strong>ice apples</strong>. The flesh is 87% water, cooling, and mildly sweet — a natural electrolyte drink in solid form.</p>
+
+ 
+
+      <p class="body-text">When young and tender, the liquid interior — <strong>Padhaneer</strong> — is collected as a naturally fermenting sap rich in sugars. When allowed to mature, the fruit yields <strong>Panangkarkandu</strong> (palm candy / palm jaggery), one of the most nutritious natural sweeteners on earth, with a glycaemic index far lower than refined sugar.</p>
+
+ 
+
+      <p class="body-text">Crucially for Enn Panai, the <strong>outer husk of the fruit</strong> — typically discarded as agricultural waste after the flesh is consumed — contains extraordinary long-staple fibres. These fibres, extracted through our proprietary process, form the world's first apparel-grade palmyra textile.</p>
+
+ 
+
+      <div class="content-grid" style="margin-top:1.5rem;">
+
+        <div class="content-card">
+
+          <span class="card-icon">🧊</span>
+
+          <div class="card-title">Ice Apple (Nungu)</div>
+
+          <div class="card-body">The translucent, jelly-like seed of the young fruit. 87% water. A summer superfood — naturally cooling and hydrating.</div>
+
+        </div>
+
+        <div class="content-card">
+
+          <span class="card-icon">🍯</span>
+
+          <div class="card-title">Palm Jaggery</div>
+
+          <div class="card-body">Unrefined sugar from the sap. Rich in iron, calcium, and minerals. Low glycaemic index — the diabetic-friendly natural sweetener.</div>
+
+        </div>
+
+        <div class="content-card">
+
+          <span class="card-icon">🌾</span>
+
+          <div class="card-title">Fruit Fibre</div>
+
+          <div class="card-body">The outer husk yields long-staple fibres with natural lustre and exceptional tensile strength — Enn Panai's breakthrough raw material.</div>
+
+        </div>
+
+        <div class="content-card">
+
+          <span class="card-icon">🌱</span>
+
+          <div class="card-title">Germinating Seed</div>
+
+          <div class="card-body">The inner seed, when buried, germinates into a new Palmyra sapling — completing a circular, regenerative supply chain.</div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+ 
+
+<!-- ══ 03 TAMIL EPICS ══ -->
+
+<section class="blog-section sec-sage" id="epics">
+
+  <div class="section-num">03</div>
+
+  <span class="overline">Chapter Three</span>
+
+  <div class="rule"></div>
+
+  <h2>The Palmyra in<br><em>Tamil Literature & Epics</em></h2>
+
+  <p class="lead">For over two thousand years, Tamil poets, philosophers, and saints have honoured the Palmyra palm — weaving it into the very fabric of their wisdom. Its presence in Tamil literature is not incidental; it is foundational.</p>
+
+ 
+
+  <div style="margin:2rem 0; border-radius:18px; overflow:hidden; box-shadow:0 8px 32px rgba(0,0,0,0.12); max-width:720px;">
+
+    <img src="data:image/jpeg;base64,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" alt="Thirukural" style="width:100%; display:block; object-fit:cover;">
+
+  </div>
+
+ 
+
+  <div class="kural-card">
+
+    <p class="kural-text">
+
+      "பனைமரம் போல் உயர்ந்தவர் தாழ்ந்து வாழ்வது<br>
+
+      அரிது; ஆனால் அவர் தரும் நிழல் என்றும் நிலைக்கும்."
+
+    </p>
+
+    <p class="kural-sub">"Like the Palmyra that stands tall, the great seldom stoop — yet the shade they cast endures forever."</p>
+
+    <span class="kural-source">Classical Tamil Wisdom</span>
+
+  </div>
+
+ 
+
+  <div class="content-grid" style="margin-top:2.5rem;">
+
+    <div class="content-card">
+
+      <span class="card-icon">📜</span>
+
+      <div class="card-title">Sangam Literature (300 BCE – 300 CE)</div>
+
+      <div class="card-body">The ancient Sangam texts — Akananuru, Purananuru, and Kalithogai — frequently reference the Palmyra as a symbol of strength, endurance, and giving. The <em>Karunilam</em> (landscape classification) of Marutham includes the Palmyra as a boundary tree. Warriors decorated themselves with Palmyra-fibre garlands as symbols of courage.</div>
+
+    </div>
+
+    <div class="content-card">
+
+      <span class="card-icon">✍️</span>
+
+      <div class="card-title">Thirukural by Thiruvalluvar (c. 200 BCE)</div>
+
+      <div class="card-body">In Kural 1198, Thiruvalluvar compares the height of longing and love to the height of the Palmyra — no other tree in Tamil literature serves as a metaphor for both physical grandeur and emotional depth simultaneously. The tree's very silhouette became a symbol of aspiration.</div>
+
+    </div>
+
+    <div class="content-card">
+
+      <span class="card-icon">🎭</span>
+
+      <div class="card-title">Silappathikaram (2nd century CE)</div>
+
+      <div class="card-body">The epic poem by Ilango Adigal describes festive scenes in Madurai where Palmyra leaves are woven into decorative arches. The tree features in descriptions of village life, harvest celebrations, and the rhythmic sound of Palmyra-fibre instruments during harvest.</div>
+
+    </div>
+
+    <div class="content-card">
+
+      <span class="card-icon">🏛️</span>
+
+      <div class="card-title">Temple Inscriptions & Manuscripts</div>
+
+      <div class="card-body">Centuries of Tamil knowledge — Siddha medicine, astronomy, philosophy — were inscribed on Palmyra leaf manuscripts (<em>Ola Chuvadi</em>). The British Museum, Chennai's Government Oriental Manuscripts Library, and the Saraswathi Mahal Library in Thanjavur hold thousands of such manuscripts — the Palmyra leaf as the world's earliest paper.</div>
+
+    </div>
+
+    <div class="content-card">
+
+      <span class="card-icon">🎵</span>
+
+      <div class="card-title">Thevaram & Divya Prabandham</div>
+
+      <div class="card-body">The 7th–9th century Saivite hymns of the Nayanmars reference groves of Palmyra trees as sacred spaces. Thirumangai Azhwar in the Divya Prabandham describes the Palmyra-lined shores of Sirkazhi — one of the 108 Divya Desams — as a land blessed by the divine.</div>
+
+    </div>
+
+    <div class="content-card">
+
+      <span class="card-icon">👑</span>
+
+      <div class="card-title">Chola, Pandya & Chera Kingdoms</div>
+
+      <div class="card-body">The Palmyra was the royal insignia of the Pandya Kingdom — featured on their battle standards and coins. Pandya warriors were called <em>Panavar</em> (people of the Palm). The tree's image graced temples, palace gates, and manuscripts as a symbol of sovereign power and Tamil identity.</div>
+
+    </div>
+
+  </div>
+
+ 
+
+  <div class="pull-quote" style="margin-top:2.5rem;">
+
+    <p>"The Palmyra serves man from root to crown, from seed to fruit, from leaf to bark — it is the only tree in nature that has no waste, no excess, and no silence."</p>
+
+    <cite>— From classical Tamil folk tradition</cite>
+
+  </div>
+
+</section>
+
+ 
+
+<!-- ══ 04 USES ══ -->
+
+<section class="blog-section sec-cream" id="uses">
+
+  <div class="section-num">04</div>
+
+  <span class="overline">Chapter Four</span>
+
+  <div class="rule"></div>
+
+  <h2>800 Uses of the<br><em>Palmyra Palm</em></h2>
+
+  <p class="lead">Ancient Tamil culture documented 801 uses of the Palmyra palm — a number so extraordinary it earned the tree the title <em>Kalpa Vriksha</em> (the wish-fulfilling tree). Modern science is only beginning to catch up.</p>
+
+ 
+
+  <div class="uses-grid">
+
+    <div class="use-card">
+
+      <span class="use-icon">🧵</span>
+
+      <div class="use-title">Textile Fibre</div>
+
+      <div class="use-desc">Fruit husk fibres spun into luxury apparel-grade yarn. Enn Panai's world-first innovation.</div>
+
+    </div>
+
+    <div class="use-card">
+
+      <span class="use-icon">🍯</span>
+
+      <div class="use-title">Palm Jaggery</div>
+
+      <div class="use-desc">Mineral-rich natural sweetener from fermented sap. Low GI alternative to refined sugar.</div>
+
+    </div>
+
+    <div class="use-card">
+
+      <span class="use-icon">🍹</span>
+
+      <div class="use-title">Neera & Toddy</div>
+
+      <div class="use-desc">Fresh palm sap (Neera) — nutritious, non-alcoholic. Fermented into toddy, a traditional beverage.</div>
+
+    </div>
+
+    <div class="use-card">
+
+      <span class="use-icon">🍽️</span>
+
+      <div class="use-title">Edible Shoots</div>
+
+      <div class="use-desc">Tender germinating seeds (Panai Kizhangu) eaten boiled or raw — a seasonal delicacy.</div>
+
+    </div>
+
+    <div class="use-card">
+
+      <span class="use-icon">🧺</span>
+
+      <div class="use-title">Leaf Crafts</div>
+
+      <div class="use-desc">Fan-shaped leaves woven into baskets, mats, hats, fans, toys, and ceremonial decorations.</div>
+
+    </div>
+
+    <div class="use-card">
+
+      <span class="use-icon">📝</span>
+
+      <div class="use-title">Palm Leaf Manuscripts</div>
+
+      <div class="use-desc">Dried leaves as writing material for 2,000+ years of Tamil knowledge, poetry, and science.</div>
+
+    </div>
+
+    <div class="use-card">
+
+      <span class="use-icon">🏗️</span>
+
+      <div class="use-title">Timber & Construction</div>
+
+      <div class="use-desc">The trunk — extremely hard and termite-resistant — used in construction, bridges, and furniture.</div>
+
+    </div>
+
+    <div class="use-card">
+
+      <span class="use-icon">🌿</span>
+
+      <div class="use-title">Medicine (Siddha)</div>
+
+      <div class="use-desc">Roots, sap, fruit, and seed used in Siddha medicine for liver health, anaemia, and cooling treatments.</div>
+
+    </div>
+
+    <div class="use-card">
+
+      <span class="use-icon">🔥</span>
+
+      <div class="use-title">Biomass Fuel</div>
+
+      <div class="use-desc">Leaf fronds and trunk segments used as smokeless fuel in rural communities.</div>
+
+    </div>
+
+    <div class="use-card">
+
+      <span class="use-icon">🪣</span>
+
+      <div class="use-title">Containers & Vessels</div>
+
+      <div class="use-desc">Young leaf sheaths naturally form waterproof containers used for sap collection and food storage.</div>
+
+    </div>
+
+    <div class="use-card">
+
+      <span class="use-icon">🌱</span>
+
+      <div class="use-title">Carbon Sequestration</div>
+
+      <div class="use-desc">Each tree sequesters CO₂ across 100 years, making Palmyra groves net-carbon-negative ecosystems.</div>
+
+    </div>
+
+    <div class="use-card">
+
+      <span class="use-icon">🎨</span>
+
+      <div class="use-title">Art & Culture</div>
+
+      <div class="use-desc">The royal symbol of Pandya kings — featured in temple carvings, coins, and Tamil folk art for millennia.</div>
+
+    </div>
+
+  </div>
+
+</section>
+
+ 
+
+<!-- ══ 05 BENEFITS ══ -->
+
+<section class="blog-section sec-white" id="benefits">
+
+  <div class="section-num">05</div>
+
+  <span class="overline">Chapter Five</span>
+
+  <div class="rule"></div>
+
+  <h2>Benefits — For People,<br><em>Planet & Future</em></h2>
+
+ 
+
+  <div class="content-grid">
+
+    <div class="content-card">
+
+      <span class="card-icon">💚</span>
+
+      <div class="card-title">Environmental Benefits</div>
+
+      <div class="card-body">
+
+        <strong>Carbon negative:</strong> Each tree absorbs more carbon than it emits over its 100-year life.<br><br>
+
+        <strong>Zero-input farming:</strong> Requires no water, no pesticides, no fertiliser — it sustains itself.<br><br>
+
+        <strong>Biodiversity:</strong> Palmyra groves host hundreds of bird, insect, and reptile species.<br><br>
+
+        <strong>Soil protection:</strong> Deep roots prevent erosion in drought-prone regions.
+
+      </div>
+
+    </div>
+
+    <div class="content-card">
+
+      <span class="card-icon">❤️</span>
+
+      <div class="card-title">Health Benefits</div>
+
+      <div class="card-body">
+
+        <strong>Cooling properties:</strong> The fruit is a natural coolant — used in Siddha medicine to treat heat stroke.<br><br>
+
+        <strong>Nutritional value:</strong> Rich in iron, zinc, potassium, vitamins A, B, and C.<br><br>
+
+        <strong>Low glycaemic index:</strong> Palm jaggery is safe for diabetics — a healthier sweetener.<br><br>
+
+        <strong>Digestive health:</strong> Neera (sap) aids digestion and liver function.
+
+      </div>
+
+    </div>
+
+    <div class="content-card">
+
+      <span class="card-icon">💰</span>
+
+      <div class="card-title">Economic Benefits</div>
+
+      <div class="card-body">
+
+        <strong>Livelihoods:</strong> A single tree supports 3–4 family members across its productive life.<br><br>
+
+        <strong>Multiple income streams:</strong> Fruit, sap, leaves, fibre, and timber each generate independent income.<br><br>
+
+        <strong>Women's empowerment:</strong> Traditionally managed by women — a pathway to independent economic identity.<br><br>
+
+        <strong>Export potential:</strong> Global premium for natural sustainable fibres and palm-derived foods.
+
+      </div>
+
+    </div>
+
+    <div class="content-card">
+
+      <span class="card-icon">🏘️</span>
+
+      <div class="card-title">Social & Cultural Benefits</div>
+
+      <div class="card-body">
+
+        <strong>Food security:</strong> The fruit provides nutrition during summer droughts when other crops fail.<br><br>
+
+        <strong>Heritage preservation:</strong> Reviving the Palmyra economy reconnects communities with their cultural identity.<br><br>
+
+        <strong>Intergenerational wealth:</strong> A tree planted today benefits the children of the planter's grandchildren.<br><br>
+
+        <strong>Rural migration reversal:</strong> Strong Palmyra economies reduce pressure on urban migration.
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+ 
+
+<!-- ══ 06 WORLD VIEW ══ -->
+
+<section class="blog-section sec-sage" id="world">
+
+  <div class="section-num">06</div>
+
+  <span class="overline">Chapter Six</span>
+
+  <div class="rule"></div>
+
+  <h2>How the World<br><em>Perceives the Palmyra</em></h2>
+
+  <p class="lead">Far beyond the shores of India, the Palmyra palm holds sacred status — as food, as fibre, as cultural anchor — across a dozen nations spanning three continents.</p>
+
+ 
+
+  <div class="country-grid">
+
+    <div class="country-card">
+
+      <span class="country-flag">🇱🇰</span>
+
+      <div class="country-body">
+
+        <div class="country-name">Sri Lanka</div>
+
+        <div class="country-desc">The Palmyra is the cultural symbol of the Tamil-speaking Northern Province. Toddy-tapping is a centuries-old tradition. Sri Lanka has active government programmes to protect Palmyra groves from post-war land conversion.</div>
+
+      </div>
+
+    </div>
+
+    <div class="country-card">
+
+      <span class="country-flag">🇲🇲</span>
+
+      <div class="country-body">
+
+        <div class="country-name">Myanmar</div>
+
+        <div class="country-desc">Known as <em>Tan Palm</em>, it is the national tree of Myanmar. Palm jaggery is a staple ingredient and the palm sap wine (<em>Htan Ye</em>) is central to cultural festivals. Myanmar has large-scale plantation programmes.</div>
+
+      </div>
+
+    </div>
+
+    <div class="country-card">
+
+      <span class="country-flag">🇰🇭</span>
+
+      <div class="country-body">
+
+        <div class="country-name">Cambodia</div>
+
+        <div class="country-desc">The Palmyra is Cambodia's national tree and appears on their national emblem. Palm sugar (<em>Skar Tnaot</em>) is the sweetener of choice. Cambodian artisans craft intricate Palmyra-leaf goods for export.</div>
+
+      </div>
+
+    </div>
+
+    <div class="country-card">
+
+      <span class="country-flag">🇳🇬</span>
+
+      <div class="country-body">
+
+        <div class="country-name">Nigeria & West Africa</div>
+
+        <div class="country-desc">Palmyra palm wine is a significant cultural and economic commodity across West Africa. The leaves are woven into roofing, baskets, and mats — industries that employ millions.</div>
+
+      </div>
+
+    </div>
+
+    <div class="country-card">
+
+      <span class="country-flag">🇹🇭</span>
+
+      <div class="country-body">
+
+        <div class="country-name">Thailand</div>
+
+        <div class="country-desc">Thai cuisine features Palmyra fruit extensively. Palm sugar is a premium export. Thailand has developed Palmyra-based cosmetics and food industries worth hundreds of millions of dollars annually.</div>
+
+      </div>
+
+    </div>
+
+    <div class="country-card">
+
+      <span class="country-flag">🌍</span>
+
+      <div class="country-body">
+
+        <div class="country-name">Global Fashion Industry</div>
+
+        <div class="country-desc">Following Future Fabrics Expo London 2023, global luxury brands are actively sourcing carbon-negative natural fibres. Palmyra fibre — as demonstrated by Enn Panai — is now on the radar of Europe's most prestigious fashion houses.</div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+ 
+
+  <div class="pull-quote" style="margin-top:2.5rem;">
+
+    <p>"In Cambodia, the Palmyra palm is so central to life that a person who does not know its uses is considered uneducated."</p>
+
+    <cite>— Cambodian Proverb</cite>
+
+  </div>
+
+</section>
+
+ 
+
+<!-- ══ 07 GOVERNMENT ══ -->
+
+<section class="blog-section sec-cream" id="government">
+
+  <div class="section-num">07</div>
+
+  <span class="overline">Chapter Seven</span>
+
+  <div class="rule"></div>
+
+  <h2>How India is<br><em>Acting to Save the Tree</em></h2>
+
+  <p class="lead">The Palmyra population in Tamil Nadu has declined dramatically over the past century — from an estimated 10 crore trees to fewer than 2 crore today. Both state and central governments are now responding with urgency.</p>
+
+ 
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+
+      <div class="timeline-dot">🌳</div>
+
+      <div class="timeline-body">
+
+        <h4>Tamil Nadu State Tree Status</h4>
+
+        <p>The Palmyra was declared Tamil Nadu's State Tree — a recognition of its deep cultural and ecological significance. This designation provides legal protections and mandates state conservation programmes.</p>
+
+      </div>
+
+    </div>
+
+    <div class="timeline-item">
+
+      <div class="timeline-dot">📋</div>
+
+      <div class="timeline-body">
+
+        <h4>Tamil Nadu Toddy Policy Reform</h4>
+
+        <p>The Tamil Nadu government has reformed toddy-tapping policies to make the industry more viable for climbers, incentivising communities to protect existing trees rather than fell them for short-term gain.</p>
+
+      </div>
+
+    </div>
+
+    <div class="timeline-item">
+
+      <div class="timeline-dot">🌱</div>
+
+      <div class="timeline-body">
+
+        <h4>Mass Plantation Drives</h4>
+
+        <p>Under the Green Tamil Nadu Mission, the state government has launched programmes to plant millions of Palmyra saplings along roadsides, canal banks, and agricultural boundaries — reversing decades of deforestation.</p>
+
+      </div>
+
+    </div>
+
+    <div class="timeline-item">
+
+      <div class="timeline-dot">🔬</div>
+
+      <div class="timeline-body">
+
+        <h4>ICAR & Agricultural University Research</h4>
+
+        <p>The Indian Council of Agricultural Research and Tamil Nadu Agricultural University have active programmes studying Palmyra varieties, propagation techniques, and value-chain development to increase commercial viability.</p>
+
+      </div>
+
+    </div>
+
+    <div class="timeline-item">
+
+      <div class="timeline-dot">🏭</div>
+
+      <div class="timeline-body">
+
+        <h4>MSME & Startup India Support</h4>
+
+        <p>Government schemes support Palmyra-based enterprises through MSME loans, technology upgradation grants, and market linkage programmes — recognising the tree's potential as a sustainable livelihood driver.</p>
+
+      </div>
+
+    </div>
+
+    <div class="timeline-item">
+
+      <div class="timeline-dot">📱</div>
+
+      <div class="timeline-body">
+
+        <h4>Digital Initiatives & GI Tags</h4>
+
+        <p>Efforts are underway to obtain Geographical Indication (GI) tags for Tamil Palmyra products — Palm jaggery from Tirunelveli, Palmyra-craft from Thanjavur — protecting artisans and increasing product value.</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+ 
+
+<!-- ══ 08 CONTRIBUTE ══ -->
+
+<section class="blog-section sec-blush" id="contribute">
+
+  <div class="section-num">08</div>
+
+  <span class="overline">Chapter Eight</span>
+
+  <div class="rule"></div>
+
+  <h2>How <em>You</em> Can<br>Help Save the Palmyra</h2>
+
+  <p class="lead">Every Palmyra tree saved is a century of shade, carbon capture, and community livelihood secured. Here is how individuals, communities, and brands can contribute to this vital mission.</p>
+
+ 
+
+  <div class="steps">
+
+    <div class="step">
+
+      <div class="step-num">01</div>
+
+      <div class="step-body">
+
+        <h4>Plant a Palmyra Sapling</h4>
+
+        <p>Contact your local panchayat, agricultural extension centre, or organisations like Enn Panai to adopt a Palmyra sapling. A single tree you plant today will outlive you and your children — providing value for a century.</p>
+
+      </div>
+
+    </div>
+
+    <div class="step">
+
+      <div class="step-num">02</div>
+
+      <div class="step-body">
+
+        <h4>Choose Palmyra-Derived Products</h4>
+
+        <p>Every time you buy palm jaggery over refined sugar, ice apple over packaged drinks, or Enn Panai fibre fabric over synthetic textiles — you create economic demand that makes the Palmyra worth protecting.</p>
+
+      </div>
+
+    </div>
+
+    <div class="step">
+
+      <div class="step-num">03</div>
+
+      <div class="step-body">
+
+        <h4>Support Artisan Communities</h4>
+
+        <p>Purchase Palmyra-leaf baskets, mats, and crafts directly from artisans. Platforms like GoCoop, Craftsvilla, and direct NGO channels connect buyers to traditional craftspeople who depend on the tree's continued existence.</p>
+
+      </div>
+
+    </div>
+
+    <div class="step">
+
+      <div class="step-num">04</div>
+
+      <div class="step-body">
+
+        <h4>Spread Awareness</h4>
+
+        <p>Share articles, documentaries, and social media content about the Palmyra. Many people outside Tamil Nadu — and indeed outside South India — are entirely unaware of this remarkable tree. Awareness is the first step to conservation.</p>
+
+      </div>
+
+    </div>
+
+    <div class="step">
+
+      <div class="step-num">05</div>
+
+      <div class="step-body">
+
+        <h4>Invest in Sustainable Innovation</h4>
+
+        <p>Support companies like Enn Panai that are building economic value chains around the Palmyra. When innovation makes the tree commercially viable at scale, conservation becomes self-sustaining.</p>
+
+      </div>
+
+    </div>
+
+    <div class="step">
+
+      <div class="step-num">06</div>
+
+      <div class="step-body">
+
+        <h4>Demand Sustainability from Brands</h4>
+
+        <p>Ask the fashion brands you buy from: what is your fibre sourced from? Is it carbon-negative? When consumers demand natural, traceable fibres, brands will respond — creating market pull for Palmyra fibre at global scale.</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+ 
+
+<!-- ══ 09 VIDEOS ══ -->
+
+<section class="blog-section sec-cream" id="videos">
+
+  <div class="section-num">09</div>
+
+  <span class="overline">Chapter Nine</span>
+
+  <div class="rule"></div>
+
+  <h2>Watch &amp; Learn —<br><em>Palmyra in Motion</em></h2>
+
+  <p class="lead">A curated collection of videos celebrating the Palmyra palm — from traditional crafts to modern innovation. Search <strong>Sureshkumar, Panai Naar, Viruppatchi</strong> on YouTube to discover more of our story.</p>
+
+ 
+
+  <div class="video-grid">
+
+    <div class="video-wrap">
+
+      <a class="video-thumb-link" href=https://youtu.be/xwV847gs0_c?si=ADdPlvIdxQjSGoFY target="_blank" rel="noopener">
+
+        <img src=https://img.youtube.com/vi/xwV847gs0_c/hqdefault.jpg alt="Enn Panai — Palmyra Fibre Story" loading="lazy">
+
+        <div class="video-play-btn">
+
+          <svg viewBox="0 0 68 48" xmlns=http://www.w3.org/2000/svg><path d="M66.5 7.7c-.8-2.9-3-5.2-5.9-6C55.8 0 34 0 34 0S12.2 0 7.4 1.7c-2.9.8-5.1 3.1-5.9 6C0 12.5 0 24 0 24s0 11.5 1.5 16.3c.8 2.9 3 5.2 5.9 6C12.2 48 34 48 34 48s21.8 0 26.6-1.7c2.9-.8 5.1-3.1 5.9-6C68 35.5 68 24 68 24s0-11.5-1.5-16.3z" fill="#ff0000"/><path d="M27 34l18-10-18-10v20z" fill="white"/></svg>
+
+        </div>
+
+      </a>
+
+      <div class="video-label">🌿 Enn Panai — Palmyra Fibre Story</div>
+
+    </div>
+
+    <div class="video-wrap">
+
+      <a class="video-thumb-link" href=https://youtube.com/shorts/RACMKxIDVJI?si=LDM5haa_Y_C4Enmy target="_blank" rel="noopener">
+
+        <img src=https://img.youtube.com/vi/RACMKxIDVJI/hqdefault.jpg alt="Enn Panai — Panai Naar Short Film" loading="lazy">
+
+        <div class="video-play-btn">
+
+          <svg viewBox="0 0 68 48" xmlns=http://www.w3.org/2000/svg><path d="M66.5 7.7c-.8-2.9-3-5.2-5.9-6C55.8 0 34 0 34 0S12.2 0 7.4 1.7c-2.9.8-5.1 3.1-5.9 6C0 12.5 0 24 0 24s0 11.5 1.5 16.3c.8 2.9 3 5.2 5.9 6C12.2 48 34 48 34 48s21.8 0 26.6-1.7c2.9-.8 5.1-3.1 5.9-6C68 35.5 68 24 68 24s0-11.5-1.5-16.3z" fill="#ff0000"/><path d="M27 34l18-10-18-10v20z" fill="white"/></svg>
+
+        </div>
+
+      </a>
+
+      <div class="video-label">🌴 Enn Panai — Panai Naar Short Film</div>
+
+    </div>
+
+    <div class="video-wrap">
+
+      <a class="video-thumb-link" href=https://www.youtube.com/watch?v=JV6nDrUlOoQ target="_blank" rel="noopener">
+
+        <img src=https://img.youtube.com/vi/JV6nDrUlOoQ/hqdefault.jpg alt="பனைமரம் — The Complete Palmyra Palm Story" loading="lazy">
+
+        <div class="video-play-btn">
+
+          <svg viewBox="0 0 68 48" xmlns=http://www.w3.org/2000/svg><path d="M66.5 7.7c-.8-2.9-3-5.2-5.9-6C55.8 0 34 0 34 0S12.2 0 7.4 1.7c-2.9.8-5.1 3.1-5.9 6C0 12.5 0 24 0 24s0 11.5 1.5 16.3c.8 2.9 3 5.2 5.9 6C12.2 48 34 48 34 48s21.8 0 26.6-1.7c2.9-.8 5.1-3.1 5.9-6C68 35.5 68 24 68 24s0-11.5-1.5-16.3z" fill="#ff0000"/><path d="M27 34l18-10-18-10v20z" fill="white"/></svg>
+
+        </div>
+
+      </a>
+
+      <div class="video-label">🌳 பனைமரம் — The Complete Palmyra Palm Story</div>
+
+    </div>
+
+    <div class="video-wrap">
+
+      <a class="video-thumb-link" href=https://youtu.be/FyY_jxh0ug8?si=8lNMDnMB6lAX4pJd target="_blank" rel="noopener">
+
+        <img src=https://img.youtube.com/vi/FyY_jxh0ug8/hqdefault.jpg alt="Enn Panai — Viruppatchi Fibre Innovation" loading="lazy">
+
+        <div class="video-play-btn">
+
+          <svg viewBox="0 0 68 48" xmlns=http://www.w3.org/2000/svg><path d="M66.5 7.7c-.8-2.9-3-5.2-5.9-6C55.8 0 34 0 34 0S12.2 0 7.4 1.7c-2.9.8-5.1 3.1-5.9 6C0 12.5 0 24 0 24s0 11.5 1.5 16.3c.8 2.9 3 5.2 5.9 6C12.2 48 34 48 34 48s21.8 0 26.6-1.7c2.9-.8 5.1-3.1 5.9-6C68 35.5 68 24 68 24s0-11.5-1.5-16.3z" fill="#ff0000"/><path d="M27 34l18-10-18-10v20z" fill="white"/></svg>
+
+        </div>
+
+      </a>
+
+      <div class="video-label">🧵 Enn Panai — Viruppatchi Fibre Innovation</div>
+
+    </div>
+
+    <div class="video-wrap">
+
+      <a class="video-thumb-link" href=https://www.facebook.com/share/v/18PKCrbvJs/ target="_blank" rel="noopener" style="display:block; position:relative; aspect-ratio:16/9; background:linear-gradient(135deg,#1877F2 0%,#0a5fd8 100%); border-radius:12px; overflow:hidden; text-decoration:none;">
+
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.8rem;">
+
+          <svg width="48" height="48" viewBox="0 0 48 48" xmlns=http://www.w3.org/2000/svg><circle cx="24" cy="24" r="24" fill="white"/><path d="M32 24h-5v-3c0-1.3.6-2 2.1-2H32v-4.9l-4.8-.1c-4.3 0-6.2 2.6-6.2 6.3V24h-3v5h3v13h6V29h4.3L32 24z" fill="#1877F2"/></svg>
+
+          <div style="width:44px;height:44px;background:rgba(255,255,255,0.92);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.25);">
+
+            <svg width="18" height="18" viewBox="0 0 18 18"><polygon points="5,2 16,9 5,16" fill="#1877F2"/></svg>
+
+          </div>
+
+        </div>
+
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:0.7rem 1rem;background:linear-gradient(transparent,rgba(0,0,0,0.55));color:white;font-size:0.7rem;font-family:'DM Sans',sans-serif;letter-spacing:0.05em;">Watch on Facebook</div>
+
+      </a>
+
+      <div class="video-label">&#x1F4F9; Enn Panai &#x2014; Facebook Video</div>
+
+    </div>
+
+  </div>
+
+ 
+
+  <div style="margin-top:2rem; background:var(--sage-pale); border-radius:16px; padding:1.5rem 2rem; display:flex; align-items:center; gap:1rem;">
+
+    <span style="font-size:1.8rem;">🔍</span>
+
+    <div>
+
+      <div style="font-weight:700; color:var(--sage-deep); font-size:0.9rem; margin-bottom:0.3rem;">Discover More on YouTube</div>
+
+      <div style="font-size:0.82rem; color:var(--text-soft);">Search <strong>Sureshkumar Panai Naar</strong> · <strong>Viruppatchi Palmyra</strong> · <strong>Enn Panai fibre</strong> to explore our full story and the community behind it.</div>
+
+    </div>
+
+    <a href=https://www.youtube.com/results?search_query=Panai+Naar+Viruppatchi target="_blank" rel="noopener"
+
+       style="flex-shrink:0; background:var(--sage-deep); color:white; text-decoration:none; padding:0.6rem 1.4rem; border-radius:100px; font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; white-space:nowrap;">
+
+      Search YouTube →
+
+    </a>
+
+  </div>
+
+</section>
+
+ 
+
+<!-- ══ 10 GALLERY ══ -->
+
+<section class="blog-section sec-sage" id="gallery">
+
+  <div class="section-num">10</div>
+
+  <span class="overline">Chapter Ten</span>
+
+  <div class="rule"></div>
+
+  <h2>Our Story<br><em>In Pictures</em></h2>
+
+  <p class="lead">A visual journey through Viruppatchi, Dindigul — where ancient palms meet world-first innovation, and where the women of Enn Panai are writing a new chapter in sustainable textile history.</p>
+
+ 
+
+  <div class="gallery-placeholder">
+
+    <span class="gallery-placeholder-icon">📸</span>
+
+    <h3>Gallery Coming Soon</h3>
+
+    <p>Our photo gallery is being prepared. Please share your images and we'll curate a beautiful visual story of the Palmyra and Enn Panai's journey.</p>
+
+  </div>
+
+</section>
+
+ 
+
+<!-- FOOTER -->
+
+<footer>
+
+  <p>&copy; 2026 Enn Panai Private Limited. All rights reserved.</p>
+
+  <p>Enn Panai Private Limited &nbsp;·&nbsp; <a href=https://www.ennpanai.com>www.ennpanai.com</a> &nbsp;·&nbsp; <a href="index.html">← Back to Main Site</a></p>
+
+</footer>
+
+ 
+
+<script>
+
+  // Active topic nav on scroll
+
+  const sections = document.querySelectorAll('.blog-section[id]');
+
+  const topicBtns = document.querySelectorAll('.topic-btn');
+
+ 
+
+  const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+
+        topicBtns.forEach(b => b.classList.remove('active'));
+
+        const active = document.querySelector(`.topic-btn[href="#${entry.target.id}"]`);
+
+        if (active) {
+
+          active.classList.add('active');
+
+          active.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+
+        }
+
+      }
+
+    });
+
+  }, { rootMargin: '-40% 0px -55% 0px' });
+
+ 
+
+  sections.forEach(s => observer.observe(s));
+
+</script>
+
+</body>
+
+</html>
+
